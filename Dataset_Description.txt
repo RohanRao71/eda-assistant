@@ -1,0 +1,19 @@
+Dataset: Student Performance Dataset
+
+Description:
+This dataset contains student academic performance metrics collected from multiple schools.
+The purpose is to analyze the relationship between demographic factors and exam outcomes.
+
+Columns:
+- gender: Biological sex of the student (male/female)
+- race/ethnicity: Self-reported ethnic group
+- parental level of education: Highest education level of the parents
+- lunch: Type of lunch received (standard or free/reduced)
+- test preparation course: Whether the student completed preparation
+- math score: Math exam score (0–100)
+- reading score: Reading exam score (0–100)
+- writing score: Writing exam score (0–100)
+
+Notes:
+Scores are standardized.
+Missing values were removed prior to ingestion.
