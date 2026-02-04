@@ -27,6 +27,11 @@ from db_utils.knowledge_ingestion import extract_text_from_txt
 from db_utils.init_db import init_all_databases
 from db_utils.db_config import get_engine
 
+
+# Ensure required directories exist
+REQUIRED_DIRS = ['knowledge', 'uploads', 'logs']
+for dir_name in REQUIRED_DIRS:
+    os.makedirs(dir_name, exist_ok=True)
 # Initialize database tables on first run
 if 'db_initialized' not in st.session_state:
     init_all_databases()
@@ -306,7 +311,10 @@ elif page == "View Projects":
                                             if os.path.exists(project_dir):
                                                 import shutil
 
-                                                shutil.rmtree(project_dir)
+                                                try:
+                                                    shutil.rmtree(project_dir)
+                                                except Exception as e:
+                                                    st.warning(f"Could not delete knowledge directory: {str(e)}")
 
                                             st.rerun()
                                         else:
