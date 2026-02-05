@@ -1,6 +1,6 @@
 #utils.py
 from db_utils.Ingestion import ingest_dataset
-from Retrieval import get_dataframe,get_column_details,get_dataset_metadata
+from db_utils.Retrieval import get_dataframe,get_column_details,get_dataset_metadata
 import bcrypt
 from sqlalchemy.exc import IntegrityError
 import streamlit as st
